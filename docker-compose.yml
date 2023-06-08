@@ -1,16 +1,16 @@
 version: '3'
 services:
-    aind:
-      image: 'ghcr.io/aind-containers/aind'
-      privileged: true
-      tty: true
-      environment:
-        - WEBMODE=1
-      ports:
-        - '5900:5900'
-        - '8080:8080'
-      volumes:
-        - '/lib/modules:/lib/modules:ro'
-        - 'dot-vnc:/home/user/.vnc'
+  aind:
+    image: ghcr.io/aind-containers/aind
+    privileged: true
+    tty: true
+    environment:
+      - WEBMODE=1
+    ports:
+      - '5900:5900'
+      - '8080:8080'
+    volumes:
+      - '/lib/modules:/lib/modules:ro'
+      - './dot-vnc:/home/user/.vnc'
 volumes:
   dot-vnc:
